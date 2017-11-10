@@ -83,6 +83,26 @@
             margin-right: 8px;
             font-weight: 600;
             color: #000000;
+            &:after{
+                content: "";
+                display: block;
+                width: 75%;
+                height: 3px;
+                position: relative;
+                top: 3px;
+                left: 5px;
+                margin-top: -3px;
+                background: #000;
+                transition: all $transition-speed ease-in-out;
+                opacity: 0;
+            }
+            &:hover{
+                text-decoration: none;
+                &:after{
+                    opacity: 1;
+                    width: 100%;
+                }
+            }
         }
         .player-btn{
             width: 40px;
@@ -187,22 +207,8 @@
                 &.active{
                     font-weight: 700;
                     &:after{
-                        content: "";
-                        display: block;
-                        width: 75%;
-                        height: 3px;
-                        position: relative;
-                        top: 3px;
-                        left: 5px;
-                        margin-top: -3px;
+                        opacity: 1;
                         background: $brand_red;
-                        transition: all $transition-speed ease-in-out;
-                    }
-                }
-                &:hover{
-                    text-decoration: none;
-                    &:after{
-                        width: 100%;
                     }
                 }
             }
