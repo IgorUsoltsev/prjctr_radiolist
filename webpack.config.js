@@ -96,17 +96,10 @@ const sassLoader = PRODUCTION
 const fileLoader = PRODUCTION
     ? [
       {
-        loader: 'url-loader',
-        options: {
-          limit: 10000,
-          name: 'images/[hash:12].[ext]'
-        }
-      },
-      {
           loader: 'file-loader',
           options: {
             name: '[path][name].[ext]?[hash:10]',
-            publicPath: 'assets/',
+            publicPath: '.',
             outputPath: '/'
           }
       }]
@@ -121,7 +114,7 @@ module.exports = {
   ],
   output: { // Where to place generated script
     filename: PRODUCTION ? 'bundle-[name].[hash:12].min.js' : 'bundle-[name].js',
-    publicPath: PRODUCTION ? '/radiolist/' : '/dist/', // Specify public folder for webpack-dev-server
+    publicPath: PRODUCTION ? './' : '/dist/', // Specify public folder for webpack-dev-server
     path: path.resolve(__dirname, 'dist')
   },
   module: {
@@ -146,7 +139,7 @@ module.exports = {
         }
       },{
         test: /\.js$/,
-        exclude: /node_modules/,
+        exclude: /node_modules(?!\/webpack-dev-server)/,
         use: {
           loader: 'babel-loader',
         }
