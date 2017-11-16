@@ -45,8 +45,17 @@
             &.blue-2 {
                 background-color: $blue-2;
             }
+            &.blue-3 {
+                background-color: $blue-3;
+            }
             &.yellow {
                 background-color: $yellow;
+            }
+            &.turq {
+                background-color: $turq;
+            }
+            &.red {
+                background-color: $red;
             }
             &.vinous {
                 background-color: $vinous;
@@ -68,12 +77,6 @@
             }
             &.white {
                 background-color: #ffffff;
-                a{
-                    color: #000000;
-                    &:hover{
-                        border-bottom-color: #000;
-                    }
-                }
             }
         }
         .controls{

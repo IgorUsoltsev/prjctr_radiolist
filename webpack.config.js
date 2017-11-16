@@ -18,7 +18,12 @@ var plugins = PRODUCTION
       }),
       new ExtractTextPlugin('styles-[contenthash:10].css'),
       new HTMLWebpackPlugin({
+        filename: 'index.html',
         template: 'assets/build/index.html'
+      }),
+      new HTMLWebpackPlugin({
+        filename: 'info.html',
+        template: 'assets/build/info.html'
       })
     ]
     : []
